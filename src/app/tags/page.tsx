@@ -1,3 +1,3 @@
 export default function Page() {
-  return <h1>Hello, kka!</h1>
+  return <h1>Hello, tags!</h1>
 }
