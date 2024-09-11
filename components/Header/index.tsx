@@ -1,16 +1,40 @@
 "use client";
 
+import {useState} from 'react'
+
 import type { NextPage } from "next";
 import styles from './index.module.scss'
 import {navs} from './config'
 import Link from "next/link";
 import { usePathname, useSearchParams } from 'next/navigation';
 
+import { Button } from "antd";
+
+import Login from "../Login/idnex"
+
 const Header = () => {
-  console.log('searchParams.get("id")');
+  
+  const [isLoginShow,setIsLoginShow] = useState(false)
+  const [from,setFrom] = useState({
+    phone:'',
+    verify:'',
+  })
+
   const pathName = usePathname(); // 获取当前路径
   const searchParams = useSearchParams(); // 获取查询参数
-  console.log('pathName',pathName);
+  
+  const handleLogin = () => {
+    console.log('handleLogin')
+    setIsLoginShow(true)
+  }
+
+  const handleWrite = () => {
+    console.log('handleWrite')
+  }
+
+  const handleClose = () => {
+    setIsLoginShow(false)
+  }
 
   return (
     <div className={styles.navbar}>
@@ -29,6 +53,13 @@ const Header = () => {
           ))
         }
       </section>
+
+      <section>
+        <Button onClick={handleWrite}>写文章</Button>
+        <Button onClick={handleLogin} type="primary">登录</Button>
+      </section>
+
+      <Login isLoginShow={isLoginShow} onClose={handleClose}></Login>
     </div>
     
   )
