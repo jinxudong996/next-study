@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@alicloud/dysmsapi20170525": "^3.0.0",
+    "@alicloud/tea-typescript": "^1.7.1",
+    "@alicloud/dysmsapi20170525": "3.0.0",
+    "@alicloud/openapi-client": "^0.4.10",
+    "@alicloud/tea-console": "^1.0.0",
+    "@alicloud/tea-util": "^1.4.8",
     "antd": "^5.20.6",
     "axios": "^1.7.7",
     "mockjs": "^1.1.0",
